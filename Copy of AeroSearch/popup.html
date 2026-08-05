@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; width: 320px; padding: 16px; margin: 0; background-color: #f9fafb; color: #111827; }
+    h2 { margin: 0 0 16px 0; font-size: 18px; color: #1f2937; }
+    .input-group { margin-bottom: 16px; }
+    input[type="text"] { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; box-sizing: border-box; font-size: 14px; }
+    .toggle-group { display: flex; align-items: center; margin-bottom: 16px; font-size: 14px; cursor: pointer; }
+    .toggle-group input { margin-right: 8px; cursor: pointer; }
+    .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+    button { padding: 10px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: opacity 0.2s; color: white; }
+    button:hover { opacity: 0.9; }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+    #btnStart { background-color: #10b981; grid-column: span 2; }
+    #btnPause { background-color: #f59e0b; }
+    #btnResume { background-color: #3b82f6; }
+    #btnStop { background-color: #ef4444; grid-column: span 2; }
+    .status-card { background: white; padding: 12px; border-radius: 6px; border: 1px solid #e5e7eb; text-align: center; }
+    #progressText { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+    #statusText { font-size: 12px; color: #6b7280; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  </style>
+</head>
+<body>
+  <h2>AeroSearch 🛩️</h2>
+  
+  <div class="input-group">
+    <input type="text" id="keyword" placeholder="Enter keyword (e.g., SVMG)" />
+  </div>
+
+  <label class="toggle-group">
+    <input type="checkbox" id="closeNoMatch"> Close tabs with no match
+  </label>
+
+  <div class="btn-grid">
+    <button id="btnStart">▶ Start Search</button>
+    <button id="btnPause" disabled>⏸ Pause</button>
+    <button id="btnResume" disabled>⏯ Resume</button>
+    <button id="btnStop" disabled>⏹ Stop</button>
+  </div>
+
+  <div class="status-card">
+    <div id="progressText">0 / 0</div>
+    <div id="statusText">Ready to scan</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
