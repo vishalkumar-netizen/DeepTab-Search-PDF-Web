@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AeroSearch: PDF Tab Scanner",
+  "version": "1.0",
+  "description": "Automatically search for keywords across all open tabs (PDFs & HTML).",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "offscreen",
+    "notifications",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "file:///*"
+  ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "action": {
+    "default_title": "Open AeroSearch Side Panel"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
